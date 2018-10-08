@@ -1,0 +1,29 @@
+@import "Constants.scss";
+
+/* Navigation styles */
+
+.navigationContainer {
+  display: flex;
+  flex-direction: row;
+  margin: 20px auto;
+  width: 100px;
+
+  .prev, .next {
+    color: white;
+    background: $color-arrow;
+    font-weight: bold;
+    font-size: $font-large;
+    padding: 4px 16px;
+    cursor: pointer;
+  }
+
+  .prev {
+    border-radius: 6px 0 0 6px;
+    margin-right: 2px;
+  }
+
+  .next {
+    border-radius: 0 6px 6px 0;
+    margin-left: 2px;
+  }
+}

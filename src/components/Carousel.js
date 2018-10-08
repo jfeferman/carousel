@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import CarouselImage from './common/CarouselImage'
+import CarouselNavigation from './CarouselNavigation'
 import {
   loadRemoteImages
 } from '../actions'
@@ -12,25 +13,31 @@ class Carousel extends Component {
   }
 
   render() {
-    const { images } = this.props
+    const { images, selectedIndex } = this.props
     return (
-      <div className="carouselContainer">
-        {images.map((image, index) => {
-          return (
-            <div key={index} className="imageContainer">
-              <CarouselImage image={image} />
-            </div>
-          )
-        })}
+      <div>
+        <div className="carouselContainer">
+          {images.map((image, index) => {
+            let selected = selectedIndex === index
+
+            return (
+              <div key={index} className={selected ? "imageContainer selected" : "imageContainer"}>
+                <CarouselImage image={image} />
+              </div>
+            )
+          })}
+        </div>
+        <CarouselNavigation />
       </div>
     )
   }
 }
 
 const mapStateToProps = (state) => {
-  const { images } = state.carousel
+  const { images, selectedIndex } = state.carousel
   return {
-    images
+    images,
+    selectedIndex
   }
 }
 

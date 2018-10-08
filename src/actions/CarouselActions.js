@@ -1,6 +1,7 @@
 import axios from 'axios'
 import {
-  LOAD_IMAGES
+  LOAD_IMAGES,
+  UPDATE_IMAGE_INDEX
 } from './types'
 
 
@@ -32,5 +33,43 @@ export const loadRemoteImages = () => {
       .catch((error) => {
         console.log('Error retrieving images from the server: ', error)
       })
+  }
+}
+
+/* Increase selected index by 1 */
+export const nextImage = () => {
+  return (dispatch, getState) => {
+    const state = getState()
+    const { selectedIndex, images } = state.carousel
+    let newIndex
+    if (selectedIndex === images.length) {
+      newIndex = selectedIndex
+    } else {
+      newIndex = selectedIndex + 1
+    }
+
+    dispatch({
+      type: UPDATE_IMAGE_INDEX,
+      payload: newIndex
+    })
+  }
+}
+
+/* Decrease selected index by 1 */
+export const previousImage = () => {
+  return (dispatch, getState) => {
+    const state = getState()
+    const { selectedIndex } = state.carousel
+    let newIndex
+    if (selectedIndex === 0) {
+      newIndex = selectedIndex
+    } else {
+      newIndex = selectedIndex - 1
+    }
+
+    dispatch({
+      type: UPDATE_IMAGE_INDEX,
+      payload: newIndex
+    })
   }
 }

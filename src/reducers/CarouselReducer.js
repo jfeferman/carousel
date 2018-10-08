@@ -1,6 +1,6 @@
 import {
   LOAD_IMAGES,
-  SELECT_IMAGE_INDEX
+  UPDATE_IMAGE_INDEX
 } from '../actions/types'
 
 const INITIAL_STATE = {
@@ -15,7 +15,7 @@ export default (state = INITIAL_STATE, action) => {
         ...state,
         images: action.payload
       }  
-    case SELECT_IMAGE_INDEX:
+    case UPDATE_IMAGE_INDEX:
       return {
         ...state,
         selectedIndex: action.payload
