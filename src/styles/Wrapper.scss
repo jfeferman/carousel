@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css?family=Ropa+Sans:400,400i');
+@import "Constants.scss";
+
+/* Wrapper styles */
+
+html, body {
+  font-family: 'Ropa Sans';
+  background: $color-background; 
+}
+
+.wrapper {
+  .carouselTitle {
+    font-size: $font-huge;
+    color: $color-primary;
+    padding: 1em;
+  }
+}

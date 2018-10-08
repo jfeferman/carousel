@@ -1,0 +1,2 @@
+export const LOAD_IMAGES = 'LOAD_IMAGES'
+export const SELECT_IMAGE_INDEX = 'SELECT_IMAGE_INDEX'

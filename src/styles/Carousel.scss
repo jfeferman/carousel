@@ -1,0 +1,14 @@
+@import "Constants.scss";
+
+/* Carousel styles */
+
+.carouselContainer {
+  background: $color-carousel-background;
+  padding: 1em;
+}
+
+@media screen and (max-width: 800px) {
+  .carouselContainer {
+    margin: 0.5em 2em;
+  }
+}
