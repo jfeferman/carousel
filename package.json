@@ -30,7 +30,8 @@
   "scripts": {
     "start": "webpack-dev-server --mode development --progress --colors --hot --config ./webpack.config.js --host 0.0.0.0",
     "build": "NODE_ENV='production' webpack --mode production --optimize-minimize --progress",
-    "test": "react-scripts test",
+    "test": "jest",
+    "test:watch": "npm test -- --watch",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -64,7 +65,11 @@
     "eslint-plugin-import": "^2.11.0",
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "eslint-plugin-react": "^7.7.0",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^22.4.2",
+    "jest-localstorage-mock": "^2.2.0",
     "node-sass": "^4.9.0",
+    "react-test-renderer": "^16.0.0-alpha.12",
     "sass-loader": "^6.0.7",
     "scss-loader": "0.0.1",
     "style-loader": "^0.19.1",
@@ -72,5 +77,20 @@
     "webpack-bundle-analyzer": "^2.11.1",
     "webpack-cli": "^3.0.3",
     "webpack-dev-server": "^3.1.4"
+  },
+  "jest": {
+    "moduleNameMapper": {
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/tests/fileMock.js",
+      "\\.(scss|css|less)$": "identity-obj-proxy"
+    },
+    "testPathIgnorePatterns": [
+      "<rootDir>/node_modules/",
+      "<rootDir>/src/styles/"
+    ],
+    "setupFiles": [
+      "jest-localstorage-mock"
+    ],
+    "verbose": true,
+    "testURL": "http://localhost/"
   }
 }

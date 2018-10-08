@@ -7,6 +7,9 @@ import {
 } from '../actions'
 import '../styles/Carousel.scss'
 
+/*
+ * The carousel container holds loaded images from server.
+ */
 class Carousel extends Component {
   componentWillMount() {
     this.props.loadRemoteImages()
