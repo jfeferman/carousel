@@ -5,9 +5,10 @@ import React, { Component } from 'react'
  */
 class CarouselImage extends Component {
   render() {
+    const { url } = this.props.image
     return (
       <div>
-        <div>placeholder</div>
+        <img src={url} alt="Image description" />
         <div>Image title</div>
       </div>
     )

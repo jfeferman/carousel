@@ -13,10 +13,24 @@ export const loadRemoteImages = () => {
   return (dispatch) => {
     axios.get(`${apiUrl}?key=${apiKey}&${query}`)
       .then((response) => {
+        console.log(response.data.hits)
+        let images = response.data.hits
+        let imageArray = images.map(function(image, i) {
+          let myImage = {
+            url: image.previewURL,
+            user: image.user,
+            likes: image.likes
+          }
+          return myImage 
+        })
+
         dispatch({
           type: LOAD_IMAGES,
-          payload: ''
+          payload: imageArray
         })
+      })
+      .catch((error) => {
+        console.log('Error retrieving images from the server: ', error)
       })
   }
 }

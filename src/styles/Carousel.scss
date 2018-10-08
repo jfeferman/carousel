@@ -5,6 +5,13 @@
 .carouselContainer {
   background: $color-carousel-background;
   padding: 1em;
+  display: flex;
+  flex-direction: row;
+  overflow: auto;
+
+  .imageContainer {
+    margin: 0.5em;
+  }
 }
 
 @media screen and (max-width: 800px) {

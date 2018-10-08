@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import CarouselImage from './common/CarouselImage'
 import {
   loadRemoteImages
 } from '../actions'
@@ -11,15 +12,25 @@ class Carousel extends Component {
   }
 
   render() {
+    const { images } = this.props
     return (
-      <div className="carouselContainer">my carousel</div>
+      <div className="carouselContainer">
+        {images.map((image, index) => {
+          return (
+            <div key={index} className="imageContainer">
+              <CarouselImage image={image} />
+            </div>
+          )
+        })}
+      </div>
     )
   }
 }
 
 const mapStateToProps = (state) => {
+  const { images } = state.carousel
   return {
-    state
+    images
   }
 }
 
