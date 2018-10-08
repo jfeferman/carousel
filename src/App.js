@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 import Carousel from './components/Carousel'
 import './styles/Wrapper.scss'
 
