@@ -22,7 +22,7 @@ class Carousel extends Component {
 
             return (
               <div key={index} className={selected ? "imageContainer selected" : "imageContainer"}>
-                <CarouselImage image={image} />
+                <CarouselImage image={image} index={index} />
               </div>
             )
           })}
