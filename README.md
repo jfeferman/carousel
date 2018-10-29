@@ -21,8 +21,8 @@ Given the short time available, the following subset of the requested functional
 
 ## Given more time, the following should be considered
 
-- CSS modules would be used from the start for local scoping of class names.
+- Test cases need to be implemented. A general jest testing framework was implemented, and a generic test for the App.js entry point. Further testing is crucial to advance the example. Install enzyme.
 - An image algorithm would be used to center images as a background of a containing `<div>`. In this way, larger versions of each image could be retrieved and the `CarouselImage` component would have equal dimensions.
-- Additional test cases would be added for important functions.
 - Requested functionality such as the arrow navigation on smaller viewports would be implemented.
 - Image centering upon selection would be handled.
+- CSS modules would be used from the start for local scoping of class names.
